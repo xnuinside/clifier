@@ -1,0 +1,10 @@
+README.rst
+setup.cfg
+setup.py
+src/clifier/__init__.py
+src/clifier/clifier.py
+src/clifier.egg-info/PKG-INFO
+src/clifier.egg-info/SOURCES.txt
+src/clifier.egg-info/dependency_links.txt
+src/clifier.egg-info/not-zip-safe
+src/clifier.egg-info/top_level.txt

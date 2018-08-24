@@ -1,0 +1,43 @@
+clifier
+=======
+clifier is a simple, tiny script to generate argparse commands and subparsers
+from yaml file
+
+config.yaml example with parser and commands
+============================================
+
+subparsers:
+  tests:
+
+    - keys: ['python_file']
+      help: Target *.py file base for test generation
+      action: check_path_action()
+
+    - keys: [-o, --objects]
+      help: List of objects names for which must be generated tests and
+          included in unittests (functions, classes). Leave empty if you want
+          generate tests for all objects in python_file
+      action: check_path_action()
+      required: true
+
+    - keys: ['-s', '--save_to']
+      help: Path where ti generate test_*.py file.Usually in directory tests/
+      default: tests/
+
+  new:
+    - keys: ['package_name']
+      help: Package name to create. It will be name of main project directory
+            and name for all configs (setup.cfg, tox.ini and etc)'
+      action: check_path_action()
+
+    - keys: ['path']
+      help: "Path where will be created new package. If path tree does not exist,
+            it will be created. Default: current work directory"
+      action: check_path_action()
+      default: ""
+
+
+**To use script**
+
+
+
