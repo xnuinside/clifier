@@ -58,11 +58,21 @@ class Clifier(object):
 
     def create_commands(self, commands, parser):
         """ add commands to parser """
-        self. apply_defaults(commands)
-        for command in commands:
+        self.apply_defaults(commands)
+        def create_single_command(command):
             keys = command['keys']
             del command['keys']
-            parser.add_argument(*keys, **command)
+            kwargs = {}
+            for item in command:
+                kwargs[item] = command[item]
+            parser.add_argument(*keys, **kwargs)
+
+        if len(commands) > 1:
+            for command in commands:
+                create_single_command(command)
+        else:
+            create_single_command(commands[0])
+
 
     def create_subparsers(self, parser):
         """ get config for subparser and create commands"""
@@ -88,7 +98,7 @@ class Clifier(object):
         """ custom command line  action to show version """
         class ShowVersionAction(argparse.Action):
             def __init__(inner_self, nargs=0, **kw):
-                super().__init__(nargs=nargs, **kw)
+                super(ShowVersionAction, inner_self).__init__(nargs=nargs, **kw)
 
             def __call__(inner_self, parser, args, value, option_string=None):
                 print("{parser_name} version: {version}".format(
