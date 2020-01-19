@@ -1,7 +1,6 @@
 ### clifier
 
-Clifier is a simple, tiny script to generate Argparse commands and subparsers
-from yaml config file.
+Clifier is a simple, tiny script to generate Argparse commands and subparsersfrom yaml config file.
 
 All arguments and parameters names same like in Argparser module, 
 so you do not need to know new lexic.
@@ -86,7 +85,9 @@ Prepare variable with path to your config file with cli:
 
 
 Initialise clifier
-
+    
+    from clifier import Clifier
+    
     cli = clifier.Clifier(config_path, prog_version="0.0.1")
 
 And get parser like standart Argparse parser

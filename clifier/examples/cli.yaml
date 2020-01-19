@@ -1,0 +1,24 @@
+parser:
+  prog: 'Clifier Example'
+  description: 'Run tests plot generator and check difference with existed tests'
+
+commands:
+   - keys: ['-v', '--version']
+     help: show Example module version
+     action: show_version()
+     default: True
+   - keys: ['Main Arg']
+     help: Provide your arg
+
+subparsers:
+  play:
+    - keys: ['game']
+      help: Write a name of the gave, what you want to play
+
+    - keys: ['-c', '--count']
+      help: Put number how much times you want to play
+      default: 2
+
+  sleep:
+    - keys: ['-t', '--time']
+      help: Put how much second you want to sleep

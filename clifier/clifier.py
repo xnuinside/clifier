@@ -87,7 +87,7 @@ class Clifier(object):
             raise Exception("File does not exist {}".format(
                 self.config_path))
         yaml_file = open(self.config_path, 'r')
-        conf = yaml.load(yaml_file)
+        conf = yaml.safe_load(yaml_file)
         return conf
 
     def add_actions(self, actions_list):

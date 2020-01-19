@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "clifier"
+version = "0.1.0"
+url = "https://github.com/xnuinside/clifier"
+description = "Clifier is a simple, tiny script to generate Argparse commands and subparsersfrom yaml config file."
+long_description = "file:README.md"
+long_description_content_type= "text/markdown"
+authors = ["xnuinside <xnuinside@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+PyYAML = "^5.3"
+
+[tool.poetry.dev-dependencies]
+poetry-dynamic-versioning = "^0.4.0"
+
+[tool.poetry-dynamic-versioning]
+enable = true
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
