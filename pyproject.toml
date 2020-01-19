@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "clifier"
-version = "0.1.0"
+version = "0.0.3"
 url = "https://github.com/xnuinside/clifier"
 description = "Clifier is a simple, tiny script to generate Argparse commands and subparsersfrom yaml config file."
 long_description = "file:README.md"
